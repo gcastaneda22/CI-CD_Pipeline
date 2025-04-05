@@ -1,0 +1,41 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+public class CalculatorTest {
+
+    // Test the add method
+    @Test
+    public void testAdd() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3), "2 + 3 should be 5");
+    }
+
+    // Test the subtract method
+    @Test
+    public void testSubtract() {
+        Calculator calculator = new Calculator();
+        assertEquals(1, calculator.subtract(3, 2), "3 - 2 should be 1");
+    }
+
+    // Test the multiply method
+    @Test
+    public void testMultiply() {
+        Calculator calculator = new Calculator();
+        assertEquals(6, calculator.multiply(2, 3), "2 * 3 should be 6");
+    }
+
+    // Test the divide method
+    @Test
+    public void testDivide() {
+        Calculator calculator = new Calculator();
+        assertEquals(2.5, calculator.divide(5, 2), "5 / 2 should be 2.5");
+    }
+
+    // Test divide by zero (this should throw an exception)
+    @Test
+    public void testDivideByZero() {
+        Calculator calculator = new Calculator();
+        assertThrows(IllegalArgumentException.class, () -> calculator.divide(5, 0), "Division by zero should throw IllegalArgumentException");
+    }
+}
